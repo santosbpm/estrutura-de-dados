@@ -12,7 +12,7 @@ bool vaziaPilha(const PilhaEstatica *P);
 bool cheiaPilha(const PilhaEstatica *P);
 
 void inserir(PilhaEstatica *P, int val);
+void remover(PilhaEstatica *P);
 void exibir(const PilhaEstatica *P);
-int remover(PilhaEstatica *P);
 
 #endif

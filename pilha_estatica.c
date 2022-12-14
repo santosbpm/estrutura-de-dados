@@ -39,11 +39,6 @@ bool cheiaPilha(const PilhaEstatica *P) {
   return P->topo == (P->capacidade - 1);
 }
 
-long PilhaEstatica_size(const PilhaEstatica *P) {
-  return P->topo + 1;
-}
-
-
 void inserir(PilhaEstatica *P, int val) {
   if (cheiaPilha(P)) {
     fprintf(stderr, "A pilha está cheia\n");
@@ -53,28 +48,16 @@ void inserir(PilhaEstatica *P, int val) {
   }
 }
 
-void exibir(const PilhaEstatica *P) {
-  if (vaziaPilha(P)) {
-    fprintf(stderr, "A pilha está vazia\n");
-  } else {
-    printf("%d",P->dado[P->topo]);
-  }
-}
-
-
-int remover(PilhaEstatica *P) {
+void remover(PilhaEstatica *P) {
   if (vaziaPilha(P)) {
     fprintf(stderr, "A pilha está vazia\n");
   } else {
     int val = P->dado[P->topo];
     P->topo--;
-
-    return val;
   }
 }
 
-
-void PilhaEstatica_print(const PilhaEstatica *P) {
+void exibir(const PilhaEstatica *P) {
   printf("capacidade: %d\n", P->capacidade);
   printf("topo: %d\n", P->topo);
 
@@ -82,5 +65,6 @@ void PilhaEstatica_print(const PilhaEstatica *P) {
     printf("%d, ", P->dado[i]);
   }
   puts("");
+  
 }
 
